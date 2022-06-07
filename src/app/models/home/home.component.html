@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-banner></app-banner>
+    </div>
+  </div>
+  <div class="row mt-4 ml-1">
+    <div class="col-md-12">
+      <h5> <i
+          class="far fa-grin-stars icon-color animate__animated animate__heartBeat animate__infinite	infinite animate__slow	2s"></i>
+        OS MAIS POPULARES</h5>
+    </div>
+  </div>
+  <section id="maisPopulares" name="maisPopulares">
+    <div class="row">
+      <div class="col-md-12">
+        <swiper [config]="config">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <app-carousel></app-carousel>
+            </div>
+            <div class="swiper-slide">
+              <app-carousel></app-carousel>
+            </div>
+            <div class="swiper-slide">
+              <app-carousel></app-carousel>
+            </div>
+            <div class="swiper-slide">
+              <app-carousel></app-carousel>
+            </div>
+            <div class="swiper-slide">
+              <app-carousel></app-carousel>
+            </div>
+            <div class="swiper-slide">
+              <app-carousel></app-carousel>
+            </div>
+            <div class="swiper-slide">
+              <app-carousel></app-carousel>
+            </div>
+            <div class="swiper-slide">
+              <app-carousel></app-carousel>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </swiper>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <app-trailer></app-trailer>
+  </section>
+
+  <section id="gratisAssistir" name="gratisAssistir">
+    <div class="row mt-4 ml-1">
+      <div class="col-md-12">
+        <h5 class="">
+          <i class="far fa-grin-tongue icon-color animate__animated animate__heartBeat animate__infinite	infinite animate__slow	2s"></i>
+          GRÁTIS PARA ASSISTIR</h5>
+      </div>
+    </div>
+  </section>
+</div>

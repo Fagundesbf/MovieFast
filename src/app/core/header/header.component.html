@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+        width="200" height="40" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Filmes </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Gêneros</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Mais
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#"><i class="fas fa-comment icon-color"></i> Discussões</a>
+            <a class="dropdown-item" href="#"><i class="fas fa-hands-helping icon-color"></i> Ajuda & Suporte</a>
+          </div>
+        </li>
+      </ul>
+      <div class="navbar-nav action-buttons ml-auto">
+        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle mr-3">Login</a>
+          <div class="dropdown-menu login-form">
+            <form action="/examples/actions/confirmation.php" method="post">
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" required="required">
+              </div>
+              <div class="form-group">
+                <div class="clearfix">
+                  <label>Password</label>
+                  <a href="#" class="float-right text-muted"><small>Forgot?</small></a>
+                </div>
+                <input type="password" class="form-control" required="required">
+              </div>
+              <input type="submit" class="btn btn-primary btn-block" value="Login">
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</nav>

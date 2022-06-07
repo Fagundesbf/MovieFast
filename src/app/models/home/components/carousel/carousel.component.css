@@ -1,0 +1,33 @@
+.carousel {
+  margin: 0px;
+  left: 0px;
+  width: 160px;
+}
+
+img {
+  border-radius: 10px;
+  margin-left: 7px;
+}
+
+.carousel_description {
+  padding-left: 20px;
+  position: relative;
+  bottom: 19px;
+  padding-bottom: 40px;
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+  background-color: rgb(0, 0, 0);
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  left: 22px;
+  position: relative;
+  bottom: 22px;
+}
+
+h6{
+  font-weight: 600;
+  margin: 0;
+}
