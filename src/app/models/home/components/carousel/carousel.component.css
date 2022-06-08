@@ -26,6 +26,13 @@ img {
   position: relative;
   bottom: 22px;
 }
+.circle>span{
+  color: white;
+    position: relative;
+    left: 8px;
+    top: 3px;
+    font-size: 13px;
+}
 
 h6{
   font-weight: 600;

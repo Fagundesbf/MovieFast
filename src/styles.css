@@ -27,6 +27,12 @@
 /* icone COR */
 .icon-color{
   color:#22bad6;
+  font-size: 30px;
+  padding-right: 10px;
+}
+.icon-span{
+  position: relative;
+  top: -5px;
 }
 /* Container */
 @media (min-width: 1200px){

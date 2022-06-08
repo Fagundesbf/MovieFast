@@ -1,85 +1,29 @@
 <div class="content">
   <div class="row">
     <div class="col-md-12">
-      <h5 class=""> <i class="fas fa-tv icon-color animate__animated animate__heartBeat animate__infinite	infinite animate__slow	2s"></i> ÚLTIMOS TRAILERS</h5>
+      <h5 class=""> <i
+          class="fas fa-tv icon-color animate__animated animate__heartBeat animate__infinite	infinite animate__slow	2s"></i>
+        <span class="icon-span">
+          ÚLTIMOS TRAILERS
+        </span>
+      </h5>
     </div>
   </div>
-  <swiper [config]="config">
+  <swiper [config]="config" name="trailer" id="trailer">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-            <div class="slide_image">
-              <img src="https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/lyXIMUbx8J4kv14C2ruVcdSFyVH.jpg" alt="">
-              <div class="slide_image-icon">
-                <i class="fas fa-play-circle slide_image_icon_size"></i>
-              </div>
-              <div class="mt-4" style="text-align: center ;">
-                <h6> O Lobo entre Nós</h6>
-                <span> O Lobo Entre Nós | Trailer Dublado</span>
-              </div>
-            </div>
+      <div class="swiper-slide" *ngFor="let trailer of trailers?.results">
+        <div class="slide_image">
+          <img [src]="'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/'+ trailer.poster_path" alt="">
+          <div class="slide_image-icon">
+            <i class="fas fa-play-circle slide_image_icon_size"></i>
+          </div>
+          <div class="mt-4" style="text-align: center; color: white;">
+            <h6> {{trailer.original_title}}</h6>
+            <span>{{trailer.title}} ({{trailer.original_language}})</span>
+            <!-- <span>{{trailer.overview}}[0:4]: '{{trailer.overview | slice:0:4}}' </span> -->
+          </div>
+        </div>
       </div>
-      <div class="swiper-slide">
-            <div class="slide_image">
-              <img src="https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/lyXIMUbx8J4kv14C2ruVcdSFyVH.jpg" alt="">
-              <div class="slide_image-icon">
-                <i class="fas fa-play-circle slide_image_icon_size"></i>
-              </div>
-              <div class="mt-4" style="text-align: center ;">
-                <h6> O Lobo entre Nós</h6>
-                <span> O Lobo Entre Nós | Trailer Dublado</span>
-              </div>
-            </div>
-      </div>
-      <div class="swiper-slide">
-            <div class="slide_image">
-              <img src="https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/lyXIMUbx8J4kv14C2ruVcdSFyVH.jpg" alt="">
-              <div class="slide_image-icon">
-                <i class="fas fa-play-circle slide_image_icon_size"></i>
-              </div>
-              <div class="mt-4" style="text-align: center ;">
-                <h6> O Lobo entre Nós</h6>
-                <span> O Lobo Entre Nós | Trailer Dublado</span>
-              </div>
-            </div>
-      </div>
-      <div class="swiper-slide">
-            <div class="slide_image">
-              <img src="https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/lyXIMUbx8J4kv14C2ruVcdSFyVH.jpg" alt="">
-              <div class="slide_image-icon">
-                <i class="fas fa-play-circle slide_image_icon_size"></i>
-              </div>
-              <div class="mt-4" style="text-align: center ;">
-                <h6> O Lobo entre Nós</h6>
-                <span> O Lobo Entre Nós | Trailer Dublado</span>
-              </div>
-            </div>
-      </div>
-      <div class="swiper-slide">
-            <div class="slide_image">
-              <img src="https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/lyXIMUbx8J4kv14C2ruVcdSFyVH.jpg" alt="">
-              <div class="slide_image-icon">
-                <i class="fas fa-play-circle slide_image_icon_size"></i>
-              </div>
-              <div class="mt-4" style="text-align: center ;">
-                <h6> O Lobo entre Nós</h6>
-                <span> O Lobo Entre Nós | Trailer Dublado</span>
-              </div>
-            </div>
-      </div>
-      <div class="swiper-slide">
-            <div class="slide_image">
-              <img src="https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/lyXIMUbx8J4kv14C2ruVcdSFyVH.jpg" alt="">
-              <div class="slide_image-icon">
-                <i class="fas fa-play-circle slide_image_icon_size"></i>
-              </div>
-              <div class="mt-4" style="text-align: center ;">
-                <h6> O Lobo entre Nós</h6>
-                <span> O Lobo Entre Nós | Trailer Dublado</span>
-              </div>
-            </div>
-      </div>
-
-      <!-- aqui -->
     </div>
   </swiper>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestGenericService } from 'src/app/core/services/request-generic.service';
+import { environment } from 'src/environments/environment';
 import { SwiperOptions } from 'swiper';
 
 @Component({
@@ -10,6 +12,9 @@ export class TrailerComponent implements OnInit {
 
   config: SwiperOptions = {
     slidesPerView: 7,
+    autoplay: {
+      delay: 3000,
+    },
     spaceBetween: 0,
     breakpoints: {
           380: {
@@ -33,18 +38,30 @@ export class TrailerComponent implements OnInit {
         spaceBetween: 30
       },
     },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: false
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
   };
-  constructor() { }
+  trailers: any;
+  constructor(private requestGeneric: RequestGenericService) { }
 
   ngOnInit() {
+    this.getMovie();
+
   }
+
+  getMovie(){
+    this.requestGeneric.get(`${environment.url}movie/upcoming?api_key=` + `${environment.api_key}` + '&page=1').subscribe((resp) => {
+      console.log('result', resp);
+       this.trailers = resp;
+    }, (error) => {
+      console.error(error)
+    })
+  }
+  // getMovie(){
+  //   this.requestGeneric.get(`${environment.url}movie/`+ 550+`/images?api_key=` + `${environment.api_key}` + '&page=1').subscribe((resp) => {
+  //     console.log('result', resp);
+  //      this.trailers = resp;
+  //   }, (error) => {
+  //     console.error(error)
+  //   })
+  // }
 
 }

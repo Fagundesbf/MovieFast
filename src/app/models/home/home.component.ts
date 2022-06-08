@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { RequestGenericService } from 'src/app/core/services/request-generic.service';
+
 import { SwiperOptions } from 'swiper';
 
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -66,10 +69,31 @@ export class HomeComponent implements OnInit {
       prevEl: '.swiper-button-prev'
     },
   };
+  populares: any =[]
+  freeMovies: any =[]
 
-  constructor() { }
+  constructor(private requestGeneric: RequestGenericService,
+  ) { }
 
   ngOnInit() {
+    this.getMoviePopular();
+    this.getFreeMovies();
   }
 
+  getMoviePopular() {
+    this.requestGeneric.get(`${environment.url}movie/popular?api_key=` + `${environment.api_key}` + '&page=1').subscribe((resp) => {
+      console.log('result', resp);
+      this.populares = resp
+    }, (error) => {
+      console.error(error)
+    })
+  }
+  getFreeMovies(){
+    this.requestGeneric.get(`${environment.url}movie/top_rated?api_key=` + `${environment.api_key}` + '&page=1').subscribe((resp) => {
+      console.log('result', resp);
+      this.freeMovies = resp
+    }, (error) => {
+      console.error(error)
+    })
+  }
 }
