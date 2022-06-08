@@ -3,6 +3,12 @@
   font-size: 19px;
 }
 
+
+.is-active {
+  color: #7fcba9 !important;
+  font-weight: 900;
+}
+
 .navbar-light{
   background-color: #032541 !important;
 }
