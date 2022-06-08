@@ -12,7 +12,7 @@
   <swiper [config]="config" name="trailer" id="trailer">
     <div class="swiper-wrapper">
       <div class="swiper-slide" *ngFor="let trailer of trailers?.results">
-        <div class="slide_image">
+        <div class="slide_image" (click)="openTrailer(trailer)">
           <img [src]="'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/'+ trailer.poster_path" alt="">
           <div class="slide_image-icon">
             <i class="fas fa-play-circle slide_image_icon_size"></i>
@@ -20,7 +20,6 @@
           <div class="mt-4" style="text-align: center; color: white;">
             <h6> {{trailer.original_title}}</h6>
             <span>{{trailer.title}} ({{trailer.original_language}})</span>
-            <!-- <span>{{trailer.overview}}[0:4]: '{{trailer.overview | slice:0:4}}' </span> -->
           </div>
         </div>
       </div>

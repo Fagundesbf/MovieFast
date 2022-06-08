@@ -10,6 +10,7 @@ import { SwiperOptions } from 'swiper';
 })
 export class TrailerComponent implements OnInit {
 
+  trailers: any;
   config: SwiperOptions = {
     slidesPerView: 7,
     autoplay: {
@@ -39,7 +40,7 @@ export class TrailerComponent implements OnInit {
       },
     },
   };
-  trailers: any;
+
   constructor(private requestGeneric: RequestGenericService) { }
 
   ngOnInit() {
@@ -55,13 +56,9 @@ export class TrailerComponent implements OnInit {
       console.error(error)
     })
   }
-  // getMovie(){
-  //   this.requestGeneric.get(`${environment.url}movie/`+ 550+`/images?api_key=` + `${environment.api_key}` + '&page=1').subscribe((resp) => {
-  //     console.log('result', resp);
-  //      this.trailers = resp;
-  //   }, (error) => {
-  //     console.error(error)
-  //   })
-  // }
+
+  openTrailer(trailer){
+    alert(trailer);
+  }
 
 }
