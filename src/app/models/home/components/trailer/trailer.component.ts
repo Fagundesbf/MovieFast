@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { RequestGenericService } from 'src/app/core/services/request-generic.service';
 import { environment } from 'src/environments/environment';
 import { SwiperOptions } from 'swiper';
@@ -18,57 +19,79 @@ export class TrailerComponent implements OnInit {
     },
     spaceBetween: 0,
     breakpoints: {
-          380: {
+      380: {
         slidesPerView: 1,
         spaceBetween: 0
       },
-          500: {
+      500: {
         slidesPerView: 1,
         spaceBetween: 0
       },
-          620: {
+      620: {
         slidesPerView: 2,
         spaceBetween: 30
       },
-          720: {
+      720: {
         slidesPerView: 2,
         spaceBetween: 30
       },
-          1210: {
+      1210: {
         slidesPerView: 3,
         spaceBetween: 30
       },
     },
   };
   modalTrailer: boolean;
+  titleModal: string;
+  subTitleModal: string;
+  urlTrailerModal: any;
 
-  constructor(private requestGeneric: RequestGenericService) { }
+  constructor(
+    private requestGeneric: RequestGenericService,
+   ) { }
 
   ngOnInit() {
     this.getMovie();
 
   }
 
-  getMovie(){
+  getMovie() {
     this.requestGeneric.get(`${environment.url}movie/upcoming?api_key=` + `${environment.api_key}` + '&page=1').subscribe((resp) => {
       console.log('result', resp);
-       this.trailers = resp;
+      this.trailers = resp;
     }, (error) => {
       console.error(error)
     })
   }
 
-  openTrailer(trailer){
-    alert(trailer.id);
+  openTrailer(trailer) {
+    this.getTrailer(trailer);
+    this.titleModal = trailer.title;
     this.openModal();
   }
 
-  closeModal(){
-    this.modalTrailer = false;
+  closeModal(event) {
+    this.modalTrailer = event;
   }
 
-  openModal(){
+  openModal() {
     this.modalTrailer = true;
+  }
+  reciverFeedback(respostaFilho) {
+    console.log('Foi emitido o evento e chegou no pai >>>> ', respostaFilho);
+  }
+
+
+  getTrailer(item) {
+    this.requestGeneric.get(`${environment.url}movie/` + item.id + `/videos?api_key=` + `${environment.api_key}` + '&page=1').subscribe((resp) => {
+      console.log('resultTrailer', resp);
+      this.subTitleModal = resp['results'][0].name + ' - ' + item.original_language;
+
+      this.urlTrailerModal = 'http://www.youtube.com/embed/'+ resp['results'][0].key+'?autoplay=1&amp;origin=https%3A%2F%2Fwww.themoviedb.org&amp;hl=nn&amp;modestbranding=1&amp;fs=1&amp;autohide=1';
+
+    }, (error) => {
+      console.error(error)
+    })
   }
 
 }

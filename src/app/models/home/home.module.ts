@@ -11,13 +11,15 @@ import { TrailerComponent } from './components/trailer/trailer.component';
 import { CommunityComponent } from './components/community/community.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+
 @NgModule({
   declarations: [
     HomeComponent,
     BannerComponent,
     CarouselComponent,
     TrailerComponent,
-    CommunityComponent
+    CommunityComponent,
+
   ],
   imports: [
     CommonModule,

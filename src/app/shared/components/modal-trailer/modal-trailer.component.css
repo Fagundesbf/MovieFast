@@ -7,11 +7,13 @@ h1 {
   font-weight: bold;
   text-align: center;
 }
+
 .barraRolagem {
   width: 100%;
   float: left;
   height: 500px;
 }
+
 h2 {
   color: var(--black-50);
   font-size: 16px;
@@ -36,6 +38,7 @@ h2 {
   background-color: rgba(0, 0, 0, 0.4);
   overflow: auto;
 }
+
 .closeTable {
   margin: 25px auto;
   cursor: pointer;
@@ -56,6 +59,7 @@ h2 {
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
   background-color: var(--white);
 }
+
 .paginacaoModal {
   width: 800px;
   margin: 0 0 0 -10px;
@@ -68,55 +72,61 @@ h2 {
   box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.16);
   background-color: var(--branco);
   bottom: 0;
+
   ul.pagination {
-      display: inline-block;
-      padding: 0;
-      margin: 3px 0 0 0;
+    display: inline-block;
+    padding: 0;
+    margin: 3px 0 0 0;
   }
 
   ul.pagination li {
-      display: inline;
+    display: inline;
   }
 
   ul.pagination li a {
-      color: var(--cinza-60);
-      font-size: 12px;
-      float: left;
-      border-radius: 4px;
-      border: 1px solid var(--cinza);
-      height: 30px;
-      margin: 0 2px 0 0;
-      line-height: 30px;
-      width: 30px;
-      text-decoration: none;
+    color: var(--cinza-60);
+    font-size: 12px;
+    float: left;
+    border-radius: 4px;
+    border: 1px solid var(--cinza);
+    height: 30px;
+    margin: 0 2px 0 0;
+    line-height: 30px;
+    width: 30px;
+    text-decoration: none;
   }
 
   ul.pagination li a.active {
-      background-color: var(--azul-escuro);
-      color: var(--branco);
-      border: 1px solid var(--azul-escuro);
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    border: 1px solid var(--azul-escuro);
   }
 
   div.center {
-      text-align: center;
+    text-align: center;
   }
 }
+
 .modal-body-table::-webkit-scrollbar {
   width: 10px;
   margin: 0 10px 0 0;
   height: 8px;
 }
+
 .modal-body-table::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 8px;
 }
+
 .modal-body-table::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 8px;
 }
+
 .modal-body-table::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
 .modal-body {
   max-width: 410px;
   min-height: 346px;
@@ -148,12 +158,26 @@ h2 {
 
 @media screen and (min-width: 950px) {
   .modal-body {
-      max-width: 900px;
-      min-height: 600px;
-      margin: 0 auto;
-      border-radius: 10px;
-      top: 64px;
-      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
-      background-color: var(--white);
+    max-width: 900px;
+    min-height: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    top: 64px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+    background-color: var(--white);
+  }
+}
+
+.close {
+  position: relative;
+  top: -530px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 950px) {
+  .iframe-size {
+    width: 350px;
+    height: 200px;
   }
 }

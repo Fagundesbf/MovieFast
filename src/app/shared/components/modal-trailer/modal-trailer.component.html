@@ -3,18 +3,18 @@
 
     <div titulo>
       <h1>
-        {{title}}
+        {{titleModal}}
       </h1>
       <h2>
-        {{subTitle}}
+        {{subTitleModal}}
       </h2>
     </div>
     <div body>
-      <iframe type="text/html" style="background-color: #000;" height="500" width="850"
-        src="//www.youtube.com/embed/U6quJDpAOIY?autoplay=1&amp;origin=https%3A%2F%2Fwww.themoviedb.org&amp;hl=nn&amp;modestbranding=1&amp;fs=1&amp;autohide=1"
+      <iframe type="text/html" class="iframe-size" style="background-color: #000;" height="450" width="850"
+      [src]="urlTrailerModal | sanitizer"
         frameborder="0" allowfullscreen=""></iframe>
-      <div class="contBtModal">
-        <button class="btn btn-sm btn-danger" (click)="closeModal()">Fechar</button>
+      <div class="close" (click)="close()">
+        <i class="far fa-window-close"></i>
       </div>
     </div>
   </div>

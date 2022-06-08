@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal-trailer',
@@ -9,12 +9,17 @@ export class ModalComponent implements OnInit {
 
   @Input() visible: boolean = false;
   @Input() classiClass: boolean = true;
-  @Input() title: string;
-  @Input() subTitle: string;
+  @Input() titleModal: string;
+  @Input() subTitleModal: string;
+  @Input() urlTrailerModal: string;
+  @Output() closeModal = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  close() {
+   this.closeModal.emit(false);
+  }
 }
