@@ -150,8 +150,6 @@ h2 {
   .modal-body {
       max-width: 900px;
       min-height: 600px;
-      width: 900px !important;
-      height: 500px !important;
       margin: 0 auto;
       border-radius: 10px;
       top: 64px;

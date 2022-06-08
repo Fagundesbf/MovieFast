@@ -40,6 +40,7 @@ export class TrailerComponent implements OnInit {
       },
     },
   };
+  modalTrailer: boolean;
 
   constructor(private requestGeneric: RequestGenericService) { }
 
@@ -58,7 +59,16 @@ export class TrailerComponent implements OnInit {
   }
 
   openTrailer(trailer){
-    alert(trailer);
+    alert(trailer.id);
+    this.openModal();
+  }
+
+  closeModal(){
+    this.modalTrailer = false;
+  }
+
+  openModal(){
+    this.modalTrailer = true;
   }
 
 }
