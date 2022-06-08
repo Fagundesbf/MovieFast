@@ -1,0 +1,6 @@
+.content{
+  background: linear-gradient(90deg, rgba(250,250,250,1) 0%, rgba(131,203,167,1) 0%, rgba(82,194,190,1) 44%, rgba(10,181,224,1) 87%);
+  color:white;
+  padding: 30px;
+  border-radius: 5px;
+}

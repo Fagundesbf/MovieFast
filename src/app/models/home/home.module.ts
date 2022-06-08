@@ -8,13 +8,15 @@ import { HomeComponent } from './home.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { TrailerComponent } from './components/trailer/trailer.component';
+import { CommunityComponent } from './components/community/community.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     BannerComponent,
     CarouselComponent,
-    TrailerComponent
+    TrailerComponent,
+    CommunityComponent
   ],
   imports: [
     CommonModule,
