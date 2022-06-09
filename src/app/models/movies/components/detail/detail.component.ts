@@ -32,7 +32,7 @@ export class DetailComponent implements OnInit {
     this.requestGeneric.get(`${environment.url}movie/` + id + `?api_key=` + `${environment.api_key}` + '&language=en-US').subscribe((resp) => {
       this.itens = resp;
     }, (error) => {
-      console.error(error)
+      console.error(error);
     });
   }
 
@@ -42,7 +42,7 @@ export class DetailComponent implements OnInit {
       this.subTitleModal = resp['results'][0].name + ' - ' +  resp['results'][0].original_language;
       this.urlTrailerModal = 'http://www.youtube.com/embed/' + resp['results'][0].key + '?autoplay=1&amp;origin=https%3A%2F%2Fwww.themoviedb.org&amp;hl=nn&amp;modestbranding=1&amp;fs=1&amp;autohide=1';
     }, (error) => {
-      console.error(error)
+      console.error(error);
     });
   }
 

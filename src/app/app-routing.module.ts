@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
- { path: 'home', loadChildren:()=> import('./models/home/home.module').then(m => m.HomeModule)},
- { path: 'movies', loadChildren:()=> import('./models/movies/movies.module').then(m => m.MoviesModule)},
+ { path: 'home', loadChildren: './models/home/home.module#HomeModule'},
+ { path: 'movies', loadChildren: './models/movies/movies.module#MoviesModule'},
  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 
 ];
