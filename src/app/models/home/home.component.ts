@@ -22,11 +22,11 @@ export class HomeComponent implements OnInit {
       },
       480: {
         slidesPerView: 3,
-        spaceBetween: 70
+        spaceBetween: 50
       },
       640: {
         slidesPerView: 3,
-        spaceBetween: 70
+        spaceBetween: 50
       },
       700: {
         slidesPerView: 3,
@@ -34,30 +34,30 @@ export class HomeComponent implements OnInit {
       },
       770: {
         slidesPerView: 4,
-        spaceBetween: 70
+        spaceBetween: 50
       },
       944: {
         slidesPerView: 4,
-        spaceBetween: 70
+        spaceBetween: 50
       }
       ,
       980: {
         slidesPerView: 4,
-        spaceBetween: 70
+        spaceBetween: 50
       },
       988: {
         slidesPerView: 4,
-        spaceBetween: 70
+        spaceBetween: 50
       }
       ,
       1020: {
         slidesPerView: 6,
-        spaceBetween: 70
+        spaceBetween: 50
       }
       ,
       1240: {
-        slidesPerView: 7,
-        spaceBetween: 70
+        slidesPerView: 6,
+        spaceBetween: 50
       }
     },
     pagination: {

@@ -6,22 +6,21 @@
   </div>
   <div class="row m-4">
     <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-2" *ngFor="let movie of movies.results">
-            <app-carousel [image]="movie.backdrop_path == null?  'https://cdn.neemo.com.br/uploads/settings_webdelivery/logo/2609/image-not-found.jpg': 'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/'+movie.backdrop_path"
-              [title]="movie.title" [subtitle]="movie.release_date" [vote]="movie.vote_average"></app-carousel>
-          </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xl-2 col-" *ngFor="let movie of movies?.results">
+          <app-carousel
+            [image]="movie.backdrop_path == null?  'https://cdn.neemo.com.br/uploads/settings_webdelivery/logo/2609/image-not-found.jpg': 'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/'+movie.backdrop_path"
+            [title]="movie.title" [subtitle]="movie.release_date" [vote]="movie.vote_average"></app-carousel>
         </div>
+      </div>
     </div>
   </div>
 
-  <div class="row m-4" align= "center">
+  <div class="row m-4" align="center">
     <div class="col-md-12">
-      <button class="btn btn-secondary" type="button" name="viewMinus" id="viewMinus" [disabled]="page==1" (click)="minus()"> Anterior</button>
-      <button class="btn btn-primary" type="button" name="viewMore" id="viewMore"  (click)="more()"> Próximo</button>
+      <button class="btn btn-secondary" type="button" name="viewMinus" id="viewMinus" [disabled]="page==1"
+        (click)="minus()"> Anterior</button>
+      <button class="btn btn-primary" type="button" name="viewMore" id="viewMore" (click)="more()"> Próximo</button>
     </div>
   </div>
 </div>
-
-
-

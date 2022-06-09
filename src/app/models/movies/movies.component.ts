@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 
 import { RequestGenericService } from 'src/app/core/services/request-generic.service';
 import { environment } from 'src/environments/environment';
-import { SwiperOptions } from 'swiper/types/swiper-options';
 
 
 
@@ -22,16 +21,24 @@ export class MoviesComponent implements OnInit {
     private activeRoute: ActivatedRoute
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.activeRoute.queryParams.subscribe(params => {
       this.getForGenre(params.genre);
       this.titlePage = params.genre;
+
     }
     );
   }
 
   getForGenre(genre?) {
-    this.requestGeneric.get(`${environment.url}discover/movie?api_key=` + `${environment.api_key}` + `&language=en-US&sort_by=vote_count.desc&include_adult=false&include_video=false&page=` + this.page + `&with_genres=` + genre + `&without_genres=` + genre + `+&with_watch_monetization_types=free`).subscribe((resp) => {
+    let url;
+    if (genre) {
+      url = `${environment.url}discover/movie?api_key=` + `${environment.api_key}` + `&language=en-US&page=` + this.page + `&with_genres=` + genre + `+&with_watch_monetization_types=free`;
+    } else {
+      url = `${environment.url}discover/movie?api_key=` + `${environment.api_key}` + `&language=en-US&page=` + this.page + `+&with_watch_monetization_types=free`
+    }
+
+    this.requestGeneric.get(url).subscribe((resp) => {
       console.log('GG', resp);
       this.movies = resp;
     }, (error) => {
@@ -41,11 +48,19 @@ export class MoviesComponent implements OnInit {
 
   more() {
     this.page = this.page + 1;
-    this.getForGenre();
+    this.activeRoute.queryParams.subscribe(params => {
+      this.getForGenre(params.genre);
+      this.titlePage = params.genre;
+    }
+    );
   }
 
   minus() {
     this.page = this.page - 1;
-    this.getForGenre();
+    this.activeRoute.queryParams.subscribe(params => {
+      this.getForGenre(params.genre);
+      this.titlePage = params.genre;
+    }
+    );
   }
 }
