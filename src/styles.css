@@ -40,3 +40,8 @@
     max-width: 1240px !important;
 }
 }
+
+.dropdown-item:hover{
+  color: #032541 !important;
+  font-weight: 700 !important;
+}

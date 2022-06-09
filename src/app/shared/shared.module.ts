@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ModalComponent } from './components/modal-trailer/modal-trailer.component';
+
 import { SanitizerPipe } from '../pipes/sanitizer.pipe';
+
+import { ModalComponent } from './components/modal-trailer/modal-trailer.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 @NgModule({
   declarations: [
     ModalComponent,
+    CarouselComponent,
     SanitizerPipe
   ],
   imports: [
@@ -18,6 +22,7 @@ import { SanitizerPipe } from '../pipes/sanitizer.pipe';
   ],
   exports: [
     ModalComponent,
+    CarouselComponent,
     FormsModule,
     ReactiveFormsModule,
   ],

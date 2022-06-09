@@ -17,17 +17,16 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/movies']" [routerLinkActive]="'is-active'">Filmes </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link">Gêneros</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Mais
+            Gêneros
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#"><i class="fas fa-comment icon-color"></i> Discussões</a>
-            <a class="dropdown-item" href="#"><i class="fas fa-hands-helping icon-color"></i> Ajuda & Suporte</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+            <div *ngFor="let gener of genres?.genres" (click)="goFilm(gener)">
+              <a class="dropdown-item" ><i class="fas fa-film icon-color"></i> {{gener.name}}</a>
+
+            </div>
           </div>
         </li>
       </ul>
