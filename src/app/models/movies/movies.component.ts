@@ -25,7 +25,6 @@ export class MoviesComponent implements OnInit {
     this.activeRoute.queryParams.subscribe(params => {
       this.getForGenre(params.genre);
       this.titlePage = params.genre;
-
     }
     );
   }

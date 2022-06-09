@@ -6,9 +6,11 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { SharedModule } from './../../shared/shared.module';
 
 import { MoviesComponent } from './movies.component';
+import { DetailComponent } from './components/detail/detail.component';
 @NgModule({
   declarations: [
     MoviesComponent,
+    DetailComponent,
 
   ],
   imports: [

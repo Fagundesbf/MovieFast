@@ -45,3 +45,7 @@
   color: #032541 !important;
   font-weight: 700 !important;
 }
+.card {
+  background-color: none !important;
+  border:none !important;
+}

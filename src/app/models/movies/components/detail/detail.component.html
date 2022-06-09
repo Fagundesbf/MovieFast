@@ -1,0 +1,54 @@
+<div class="content">
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <div class="col-md-12">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top"
+            [src]="itens?.poster_path == null?  'https://cdn.neemo.com.br/uploads/settings_webdelivery/logo/2609/image-not-found.jpg': 'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/'+itens?.poster_path"
+            alt="Card image cap">
+          <div class="card-body">
+            <div class="row" align="center">
+              <div class="col-md-12">
+                <div class="row " align="center">
+                  <div class="col-md-2">
+                    <div class="col-md-12">
+                      <img src="https://www.themoviedb.org/t/p/original/t2yyOv40HZeVlLjYsCsPHnWLk4W.jpg" alt="" style="border-radius: 5px;
+                          width: 32px;">
+                    </div>
+                  </div>
+                  <div class="col-md-10">
+                    <h5>Assista Agora</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+          <h2> {{itens?.original_title}}</h2>
+          <h5>{{itens?.tagline}}</h5>
+        </div>
+      </div>
+      <div class="row mt-2 mb-2">
+        <div class="col-md-1">
+          <div class="circle">
+            <span>{{itens?.vote_average }} </span>
+          </div>
+        </div>
+        <div class="col-md-1">
+            <h5>Avaliação dos Usuários </h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3> Sinopse </h3>
+          <p> {{itens?.overview}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
