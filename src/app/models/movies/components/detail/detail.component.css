@@ -27,3 +27,28 @@
   font-weight: 900;
   font-size: 30px;
 }
+.circle-icon {
+  width: 50px;
+  height: 50px;
+  background: #032541;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  left: 27px;
+  position: relative;
+  top: 9px;
+}
+
+.circle-icon>i {
+  color: white;
+  position: relative;
+  left: 16px;
+  top: 13px;
+}
+
+@media screen and (max-width: 775px) {
+  .mobile {
+    display: flex;
+    flex-wrap: inherit;
+  }
+}
+

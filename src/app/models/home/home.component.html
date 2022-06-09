@@ -20,7 +20,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let popular of populares.results">
               <app-carousel [image]="'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/'+popular.backdrop_path"
-                [title]="popular.title" [subtitle]="popular.release_date" [vote]="popular.vote_average"></app-carousel>
+                [title]="popular.title" [subtitle]="popular.release_date" [vote]="popular.vote_average" [id]="popular.id"></app-carousel>
             </div>
           </div>
           <div class="swiper-pagination"></div>
@@ -48,7 +48,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let movie of freeMovies.results">
               <app-carousel [image]="'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/'+movie.backdrop_path"
-                [title]="movie.title" [subtitle]="movie.release_date" [vote]="movie.vote_average"></app-carousel>
+                [title]="movie.title" [subtitle]="movie.release_date" [vote]="movie.vote_average" [id]="movie.id"></app-carousel>
             </div>
           </div>
           <div class="swiper-pagination"></div>

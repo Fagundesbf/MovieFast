@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -11,10 +12,16 @@ export class CarouselComponent implements OnInit {
   @Input() title: string;
   @Input() subtitle: string;
   @Input() vote: string;
+  @Input() id: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  goDetail(){
+    this.router.navigate(
+      ['/movies/detail', this.id],
+    );
+  }
 }

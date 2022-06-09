@@ -180,4 +180,11 @@ h2 {
     width: 350px;
     height: 200px;
   }
+
+.close {
+  position: relative;
+  top: -280px;
+  font-size: 40px;
+  cursor: pointer;
+}
 }

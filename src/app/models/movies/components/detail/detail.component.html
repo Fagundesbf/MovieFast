@@ -1,8 +1,8 @@
-<div class="content">
-  <div class="row mb-4">
-    <div class="col-md-3">
+<div class="content" style="margin-top: 70px ;">
+  <div class="row mb-4 mt-4">
+    <div class="col-md-4 col-sm-2">
       <div class="col-md-12">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="min-width: 130px;">
           <img class="card-img-top"
             [src]="itens?.poster_path == null?  'https://cdn.neemo.com.br/uploads/settings_webdelivery/logo/2609/image-not-found.jpg': 'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/'+itens?.poster_path"
             alt="Card image cap">
@@ -26,29 +26,66 @@
         </div>
       </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8 col-sm-10">
       <div class="row">
         <div class="col-md-12">
-          <h2> {{itens?.original_title}}</h2>
-          <h5>{{itens?.tagline}}</h5>
-        </div>
-      </div>
-      <div class="row mt-2 mb-2">
-        <div class="col-md-1">
-          <div class="circle">
-            <span>{{itens?.vote_average }} </span>
+
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <h1> {{itens?.original_title}}</h1>
+              <h5>{{itens?.tagline}}</h5>
+            </div>
           </div>
-        </div>
-        <div class="col-md-1">
-            <h5>Avaliação dos Usuários </h5>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h3> Sinopse </h3>
-          <p> {{itens?.overview}}</p>
+          <div class="row mt-2 mb-2 mobile">
+            <div class="col-md-1">
+              <div class="circle">
+                <span>{{itens?.vote_average }} </span>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <h5>Avaliação dos Usuários </h5>
+            </div>
+            <div class="col-md-1">
+              <div class="circle-icon">
+                <i class="fas fa-list"></i>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="circle-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="circle-icon">
+                <i class="fas fa-bookmark"></i>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="circle-icon">
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <h3> Sinopse </h3>
+              <p> {{itens?.overview}}</p>
+            </div>
+          </div>
+          <div class="row mb-4" style="margin-top:150px ;">
+            <div class="col-md-12">
+              <button class="btn btn-primary btn-lg btn-block" (click)="openTrailer()">Assistir Trailer</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<app-modal-trailer [visible]="modalTrailer" [titleModal]="'titleModal'" [subTitleModal]="'subTitleModal'" [urlTrailerModal]="urlTrailerModal"  (closeModal)="closeModal($event)">
+
+</app-modal-trailer>

@@ -9,7 +9,7 @@ import { RequestGenericService } from '../services/request-generic.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  genres:any;
+  genres: any;
 
   constructor(
     private requestGeneric: RequestGenericService,
@@ -21,15 +21,13 @@ export class HeaderComponent implements OnInit {
 
   getGenres() {
     this.requestGeneric.get(`${environment.url}genre/movie/list?api_key=` + `${environment.api_key}`).subscribe((resp) => {
-      console.log('resultGG', resp);
       this.genres = resp;
     }, (error) => {
       console.error(error)
     });
   }
 
-  goFilm(item){
-    console.log('item', item);
+  goFilm(item) {
     this.router.navigate(
       ['/movies'],
       { queryParams: { genre: item.name } }

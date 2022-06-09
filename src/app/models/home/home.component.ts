@@ -82,7 +82,6 @@ export class HomeComponent implements OnInit {
 
   getMoviePopular() {
     this.requestGeneric.get(`${environment.url}movie/popular?api_key=` + `${environment.api_key}` + '&page=1').subscribe((resp) => {
-      console.log('result', resp);
       this.populares = resp
     }, (error) => {
       console.error(error)
@@ -90,7 +89,6 @@ export class HomeComponent implements OnInit {
   }
   getFreeMovies(){
     this.requestGeneric.get(`${environment.url}movie/top_rated?api_key=` + `${environment.api_key}` + '&page=1').subscribe((resp) => {
-      console.log('result', resp);
       this.freeMovies = resp
     }, (error) => {
       console.error(error)

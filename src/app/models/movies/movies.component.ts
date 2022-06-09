@@ -25,8 +25,7 @@ export class MoviesComponent implements OnInit {
     this.activeRoute.queryParams.subscribe(params => {
       this.getForGenre(params.genre);
       this.titlePage = params.genre;
-    }
-    );
+    });
   }
 
   getForGenre(genre?) {
@@ -38,7 +37,6 @@ export class MoviesComponent implements OnInit {
     }
 
     this.requestGeneric.get(url).subscribe((resp) => {
-      console.log('GG', resp);
       this.movies = resp;
     }, (error) => {
       console.error(error)
