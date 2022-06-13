@@ -49,3 +49,8 @@
   background-color: none !important;
   border:none !important;
 }
+.navbar-light .navbar-toggler {
+  color: #f8f9fa;
+  background-color: #8acda4;
+  border-color: #f8f9fa;
+}

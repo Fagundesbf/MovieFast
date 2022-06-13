@@ -183,7 +183,7 @@ h2 {
 
 .close {
   position: relative;
-  top: -280px;
+  top: -2px;
   font-size: 40px;
   cursor: pointer;
 }
