@@ -31,6 +31,7 @@ export class DetailComponent implements OnInit {
   getMovieId(id) {
     this.requestGeneric.get(`${environment.url}movie/` + id + `?api_key=` + `${environment.api_key}` + '&language=en-US').subscribe((resp) => {
       this.itens = resp;
+      console.log('Itens', this.itens);
     }, (error) => {
       console.error(error);
     });
